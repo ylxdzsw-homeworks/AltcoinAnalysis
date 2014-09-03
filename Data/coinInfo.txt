@@ -1,0 +1,6 @@
+"coin" "githubAddress" "rank"
+"1" "bitcoin" "https://github.com/bitcoin/bitcoin.git" 1
+"2" "litecoin" "https://github.com/litecoin-project/litecoin.git" 2
+"3" "dogecoin" "https://github.com/dogecoin/dogecoin.git" 7
+"4" "bitshares" "https://github.com/BitShares/BitShares-PTS.git" 4
+"5" "ppcoin" "https://github.com/ppcoin/ppcoin.git" 6
