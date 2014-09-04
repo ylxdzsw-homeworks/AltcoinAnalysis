@@ -1,0 +1,6 @@
+"coin" "rank" "size" "star" "watch" "network" "subscriber"
+"1" "bitcoin" 1 102008 5787 5787 4168 765
+"2" "litecoin" 2 113884 953 953 4168 240
+"3" "dogecoin" 7 109714 992 992 435 172
+"4" "bitshares" 4 50198 82 82 4168 62
+"5" "ppcoin" 6 26870 215 215 4168 58
