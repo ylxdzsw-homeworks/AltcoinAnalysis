@@ -7,7 +7,6 @@ makeTableOfGithubInfo <- function(){
     githubInfo <- rbind(githubInfo,data.frame(coin=coinInfo[i,"coin"],
                                               size=infos$size,
                                               star=infos$stargazers_count,
-                                              watch=infos$watchers_count,
                                               network=infos$network_count,
                                               subscriber=infos$subscribers_count
                                               ))

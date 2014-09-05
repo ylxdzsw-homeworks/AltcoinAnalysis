@@ -4,3 +4,5 @@
 "3" "dogecoin" "https://github.com/dogecoin/dogecoin.git" 7
 "4" "bitshares" "https://github.com/BitShares/BitShares-PTS.git" 4
 "5" "ppcoin" "https://github.com/ppcoin/ppcoin.git" 6
+"6" "zccoin" "https://github.com/zccoin/zccoin.git" 100
+"7" "icebergcoin" "https://github.com/Icebergcoin/icebergcoin.git" 250

@@ -1,0 +1,117 @@
+AltcoinAnalysis Feasibility Study
+========================================================
+author: ZhangShiwei
+date: 2014.9.4
+
+What I Did
+========================================================
+
+- Collecting informations from http://coinmarketcap.com/
+- Getting informations from <a href="https://github.com/settings/applications/127800">Github API</a>
+- Getting informations from git repositories of Altcoins
+- Using R, ggplot2 and Knit to visualize these data
+
+Downloading Repos
+========================================================
+
+this script is avaliable in /Rcode/downloadSourceFromGithub.R
+
+```{r, eval=FALSE}
+coinInfo <- read.table("./Data/coinInfo.txt")
+setwd("./Data/sourceCode")
+for(i in 1:nrow(coinInfo)){
+  system(paste("git clone",coinInfo[i,"githubAddress"]))
+}
+setwd("../../")
+```
+
+Getting Informations From Github API
+========================================================
+
+```{r, eval=FALSE}
+source("./Rcode/makeTableOfGithubInfo.R")
+makeTableOfGithubInfo()
+```
+
+```{r, echo=FALSE}
+setwd("../")
+read.table("./Data/githubInfo.txt")
+```
+
+Getting Informations From Git Repos
+========================================================
+
+```{r, eval=FALSE}
+source("./Rcode/makeTableOfSourceInfo.R")
+makeTableOfSourceInfo()
+```
+
+```{r, echo=FALSE}
+setwd("../")
+read.table("./Data/sourceInfo.txt")
+```
+
+Findings
+========================================================
+
+```{r, echo=FALSE}
+setwd("../")
+library(ggplot2)
+ggplot(read.table("./Data/allInfo.txt"),aes(log(rank),size))+geom_point(aes(color=coin))+geom_smooth(method="lm",level=0.2)
+```
+
+***
+
+<small>*As the rank has a big scale, I use log(rank) to generize plot</small>
+
+It can be seem from the plot that the size of the repo is relevent to the rank of Altcoins
+
+Findings
+========================================================
+
+```{r, echo=FALSE}
+fuck <- Sys.setlocale("LC_TIME", "English") # to make the returns invisiable
+setwd("../Data/sourceCode")
+sourceName <- c("bitcoin","dogecoin","ppcoin","zccoin")
+par(mfrow=c(2,2))
+for(i in 1:4){
+  setwd(sourceName[i])
+  commitInfo <- system("git log --pretty=format:\"%cd\"",intern=T)
+  commitInfo <- strsplit(commitInfo," ")
+  commitInfo <- sapply(commitInfo,function(x){paste(x[2],x[3],x[5])})
+  commitInfo <- as.Date(commitInfo,"%b %d %Y")
+  a <- hist(commitInfo,breaks=10)
+  abline(lm(a$density ~ a$mids),col="blue")
+  setwd("../")
+}
+```
+
+***
+
+There might be some connection between the commits density of date, so I include the slope of the regression line in the final data.
+
+Findings
+========================================================
+
+```{r, echo=FALSE}
+x <- read.table("../Data/allInfo.txt")
+rownames(x) <- x$coin
+x <- x[,-c(1)]
+heatmap(as.matrix(scale(x)))
+```
+
+***
+
+It seems like subscriber and star are the same accroding to the heatmap, so we can delete one of them in our final data. And this plot is also a proof that there be connection between develop activity and coin rank, as the order of coin is generally the same as their rank
+
+Conclusion
+========================================================
+
+There be some connection between develop activity and coin rank, we can do further study like following:
+
+- finding more indicators that can indicate developing activity
+- trainning a 
+
+
+
+

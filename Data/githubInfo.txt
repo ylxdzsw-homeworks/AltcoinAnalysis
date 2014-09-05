@@ -1,6 +1,8 @@
-"coin" "rank" "size" "star" "watch" "network" "subscriber"
-"1" "bitcoin" 1 102008 5787 5787 4168 765
-"2" "litecoin" 2 113884 953 953 4168 240
-"3" "dogecoin" 7 109714 992 992 435 172
-"4" "bitshares" 4 50198 82 82 4168 62
-"5" "ppcoin" 6 26870 215 215 4168 58
+"coin" "size" "star" "network" "subscriber"
+"1" "bitcoin" 102159 5789 4170 763
+"2" "litecoin" 113884 955 4170 240
+"3" "dogecoin" 109714 991 433 172
+"4" "bitshares" 50198 82 4170 62
+"5" "ppcoin" 26870 215 4170 58
+"6" "zccoin" 2020 3 7 4
+"7" "icebergcoin" 2195 1 3 1

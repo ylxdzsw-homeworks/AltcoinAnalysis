@@ -14,10 +14,10 @@ makeTableOfSourceInfo <- function(){
     sourceInfo <- rbind(sourceInfo,data.frame(coin=sourceName[i],
                                               counts=length(commitInfo),
                                               intercept=commitLm$coefficients[1],
-                                              coefficients.commitDate=commitLm$coefficients[2]))
+                                              k=commitLm$coefficients[2]))
     setwd("../")
     print(paste0("finished ",floor(100 * i / length(sourceName)),"%"))
   }
   setwd("../../")
-  write.table(sourceInfo,"./Data/sourceInfo.txt")
+  write.table(sourceInfo,"./Data/sourceInfo.txt",row.names=1:length(sourceName))
 }
