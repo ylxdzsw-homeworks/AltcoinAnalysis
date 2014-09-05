@@ -77,7 +77,7 @@ Findings
 
 <small>*As the rank has a big scale, I use log(rank) to generize plot</small>
 
-It can be seem from the plot that the size of the repo is relevent to the rank of Altcoins
+It can be seen from the plot that the size of the repo is relevent to the rank of Altcoins
 
 Findings
 ========================================================
@@ -86,7 +86,7 @@ Findings
 
 ***
 
-There might be some connection between the commits density of date, so I include the slope of the regression line in the final data.
+There might be some connections between the commits density of date and the coin rank, so I include the slope of the regression line in the final data.
 
 Findings
 ========================================================
@@ -103,7 +103,7 @@ Conclusion
 There be some connection between develop activity and coin rank, we can do further study like following:
 
 - finding more indicators that can indicate developing activity
-- trainning a 
+- trainning a neural network to identify whether a new Altcoin is valuable
 
 
 
